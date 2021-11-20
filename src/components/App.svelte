@@ -8,8 +8,8 @@
 		todo = '';
 	}
 
-	const removeTodo = (i: number) => {
-		todos.splice(i, 1)
+	const removeTodo = (index: number) => {
+		todos.splice(index, 1)
 		todos = todos;
 	}
 </script>
@@ -21,8 +21,8 @@
 		<button>ADD</button>
 	</form>
 	
-	{#each todos as todo, i}
-		<p on:click={() => removeTodo(i)}>{todo}</p>
+	{#each todos as todo, index}
+		<p on:click={() => removeTodo(index)}>{todo}</p>
 	{/each}
 </main>
 
