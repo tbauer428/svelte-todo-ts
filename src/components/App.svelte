@@ -16,8 +16,11 @@
 
 <main>
 	<h1>todos</h1>
-	<input type='text' bind:value={todo}>
-	<button on:click={addTodo}>ADD</button>
+	<form on:submit|preventDefault={addTodo}>
+    	<input bind:value={todo} placeholder='new todo'>
+		<button>ADD</button>
+	</form>
+	
 	{#each todos as todo, i}
 		<p on:click={() => removeTodo(i)}>{todo}</p>
 	{/each}
